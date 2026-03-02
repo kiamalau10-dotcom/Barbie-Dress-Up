@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@400;500;600;700&family=Pacifico&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Dancing Script", cursive;
+  --font-accent: "Pacifico", cursive;
+  
+  --color-barbie-pink: #e0218a;
+  --color-barbie-light-pink: #ff69b4;
+  --color-barbie-soft-pink: #fce4ec;
+}
+
+@layer base {
+  body {
+    @apply bg-barbie-soft-pink text-gray-800 antialiased overflow-hidden;
+  }
+}
+
+.sparkle {
+  position: relative;
+}
+
+.sparkle::after {
+  content: "✨";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  animation: sparkle-anim 2s infinite;
+}
+
+@keyframes sparkle-anim {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+}
+
+.glass-panel {
+  @apply bg-white/40 backdrop-blur-md border border-white/20 shadow-xl;
+}
+
